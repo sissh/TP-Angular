@@ -1,0 +1,34 @@
+<div class="calculator">
+  
+  <div class="input-area">
+    <input type="number" name="num1" [(ngModel)]="num1" />
+
+    <select [(ngModel)]="operation">
+      <option value="Addition">+</option>
+      <option value="Soustraction">-</option>
+      <option value="Multiplication">*</option>
+      <option value="Division">/</option>
+    </select>
+
+    <input type="number" name="num2" [(ngModel)]="num2" />
+
+    <button (click)="calculate()">Calculer</button>
+  </div>
+
+  <div class="output-area">
+    <div *ngIf="result">Votre résultat: {{result}}</div>
+    <br>
+  </div>
+
+  <div class="history-area">
+    <div *ngFor="let entry of history">
+      <div>Date: {{entry.time | date}}</div>
+      <div>Opération: {{entry.operation}}</div>
+      <div>Résultat: {{entry.result}}</div>
+      <button (click)="removeFromHistory(entry)">Retirer</button>
+      <br>
+      <br>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,35 @@
+<form>
+  <label for="name">Nom : </label>
+  <input type="text" id="name" name="name" [(ngModel)]="name" (ngModelChange)="updateName()">
+  <br>
+  <br>
+
+  <label for="font">Police : </label>
+  <select name ="font" id="font" [(ngModel)]="font" (ngModelChange)="updateFont()">
+    <option value="Arial">Arial</option>
+    <option value="Comic Sans MS">Comic Sans MS</option>
+    <option value="Verdana">Verdana</option>
+  </select>
+  <br>
+  <br>
+
+  <label for="size">Taille : </label>
+  <input name="size" type="number" id="size" [(ngModel)]="size" (ngModelChange)="updateSize()" min="0" value="12">
+  <br>
+  <br>
+
+  <input name="left" type="checkbox" id="left" [(ngModel)]="left" (ngModelChange)="updateAlignment()">
+  <label for="left">Gauche</label>
+
+  <input name="center" type="checkbox" id="center" [(ngModel)]="center" (ngModelChange)="updateAlignment()">
+  <label for="center">Centré</label>
+
+  <input name="right" type="checkbox" id="right" [(ngModel)]="right" (ngModelChange)="updateAlignment()">
+  <label for="right">Droite</label>
+</form>
+
+<br>
+<div [style.font-family]="font" [style.font-size.px]="size" [style.text-align]="alignment">
+  Bonjour {{ name }}!
+</div>
+

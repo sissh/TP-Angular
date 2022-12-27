@@ -1,0 +1,23 @@
+<table style="border: 1px solid;" matSort (matSortChange)="sortData($event)">
+    <thead>
+      <tr>
+        <th mat-sort-header="id" style="border: 1px solid;">ID</th>
+        <th mat-sort-header="amount" style="border: 1px solid;">Somme</th>
+        <th mat-sort-header="balance" style="border: 1px solid;">Solde</th>
+        <th mat-sort-header="label" style="border: 1px solid;">Libellé</th>
+        <th mat-sort-header="date" style="border: 1px solid;">Date</th>
+      </tr>
+    </thead>
+  
+    <tbody style="border: 1px solid;">
+      <tr *ngFor="let transaction of transactions" style="border: 1px solid;">
+        <td style="border: 1px solid;"><a routerLink="/transaction" [queryParams]="{id: transaction.id}" routerLinkActive="active" ariaCurrentWhenActive="page">{{ transaction.id }}</a></td>
+        <td style="border: 1px solid;">{{ transaction.amount }}</td>
+        <td style="border: 1px solid;">{{ transaction.balance }}</td>
+        <td style="border: 1px solid;">{{ transaction.label }}</td>
+        <td style="border: 1px solid;">{{ transaction.date | date: "'Le' dd/MM/YYYY 'à' hh:mm:ss" }}</td>
+      </tr>
+    </tbody>
+</table>
+  
+  

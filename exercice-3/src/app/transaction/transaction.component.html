@@ -5,6 +5,7 @@
         <th style="border: 1px solid;">Somme</th>
         <th style="border: 1px solid;">Solde</th>
         <th style="border: 1px solid;">Libellé</th>
+        <th style="border: 1px solid;">Description</th>
         <th style="border: 1px solid;">Date</th>
       </tr>
     </thead>
@@ -15,6 +16,7 @@
           <td style="border: 1px solid;">{{ transaction.amount }}</td>
           <td style="border: 1px solid;">{{ transaction.balance }}</td>
           <td style="border: 1px solid;">{{ transaction.label }}</td>
+          <td style="border: 1px solid;">{{ transaction.description }}</td>
           <td style="border: 1px solid;">{{ transaction.date | date: "'Le' dd/MM/YYYY 'à' hh:mm:ss" }}</td>
         </tr>
       </tbody>

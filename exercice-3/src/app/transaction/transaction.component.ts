@@ -3,8 +3,16 @@ import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { Transaction } from '../home/home.component';
 import { map } from 'rxjs/operators';
+
+export interface Transaction {
+  id: string;
+  amount: number;
+  balance: number;
+  label: string;
+  description: string;
+  date: Date;
+}
 
 @Component({
   selector: 'app-transaction',
@@ -21,6 +29,7 @@ export class TransactionComponent implements OnInit {
     amount: 0,
     balance: 0,
     label: "",
+    description: "",
     date: new Date() 
   }
 

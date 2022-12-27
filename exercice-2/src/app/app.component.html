@@ -22,7 +22,7 @@
 
   <div class="history-area">
     <div *ngFor="let entry of history">
-      <div>Date: {{entry.time | date}}</div>
+      <div>Date: {{entry.time | date: "'Le' dd/MM/YYYY 'à' hh:mm:ss"}}</div>
       <div>Opération: {{entry.operation}}</div>
       <div>Résultat: {{entry.result}}</div>
       <button (click)="removeFromHistory(entry)">Retirer</button>
